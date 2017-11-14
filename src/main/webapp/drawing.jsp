@@ -20,7 +20,7 @@
         <h1>Wow - a wall</h1>
         <!-- lav SVG Kanvas der passer i størrelsen og og giver os et 
              logisk koordinat system der er 100 gange størrer -->
-        <svg width="<%=length%>cm" height="<%=height%>cm" 
+        <svg width="75%" 
              viewBox="0 0 <%=length*100+1%> <%=height*100+1%>">
         <!-- Benyt samme princip som tidligere til RenderUtils - her er det blot SVG vi genererer -->
         <%= SVGUtil.house(length , width, height) %>

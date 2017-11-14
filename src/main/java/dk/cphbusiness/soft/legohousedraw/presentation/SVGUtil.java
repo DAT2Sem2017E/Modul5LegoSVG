@@ -18,7 +18,7 @@ public class SVGUtil {
     public static String house( int length, int width, int height ) {
         StringBuilder sb = new StringBuilder();
         for ( int layer = 1; layer <= height; layer++ ) {
-            sb.append( layer( length, height ) );
+            sb.append( layer( length, layer ) );
         }
         return sb.toString();
     }
@@ -102,7 +102,7 @@ public class SVGUtil {
         return sb.toString();
     }
 
-    private static String[] brickCol = { "none", "#0000FF", "#00FF00", "none", "#FF0000" };
+    private static String[] brickCol = { "none", "#5555FF", "#00DD00", "none", "#FF0000" };
 
     private static String brick( int size, int xPos, int yPos ) {
         String res = "<rect x='" + xPos * 100 + "' y='" + yPos * 100 + "' width='" + size * 100 + "' height='100'"
