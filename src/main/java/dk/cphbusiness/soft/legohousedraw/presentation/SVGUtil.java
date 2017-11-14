@@ -17,7 +17,7 @@ public class SVGUtil {
      */
     public static String house( int length, int width, int height ) {
         StringBuilder sb = new StringBuilder();
-        for ( int layer = 1; layer <= height; layer++ ) {
+        for ( int layer = 0; layer <= height; layer++ ) {
             sb.append( layer( length, layer ) );
         }
         return sb.toString();
@@ -102,14 +102,24 @@ public class SVGUtil {
         return sb.toString();
     }
 
-    private static String[] brickCol = { "none", "#5555FF", "#00DD00", "none", "#FF0000" };
+    private static final String[] BRICK_COL = { "none", "#5555FF", "#00DD00", "none", "#FF0000" };
 
     private static String brick( int size, int xPos, int yPos ) {
+        // A one-brick is drawn as a 100x100 rectangle. A four-brick as a 400x100 rectangle
+        // The excessive scaling is done to prevent the lines around the bricks to become
+        // wery thick when scaled 
+        // The colors are based on size, and stored in the static array above
         String res = "<rect x='" + xPos * 100 + "' y='" + yPos * 100 + "' width='" + size * 100 + "' height='100'"
-                + "style=\"stroke: #000000; fill: " + brickCol[ size ] + "\"/>";
-        res += "<text x='" + ( xPos * 100 + ( size * 100 ) / 2 ) + "' y='" + ( yPos * 100 + 25 ) + "' "
+                + "style=\"stroke: #000000; fill: " + BRICK_COL[ size ] + "\"/>";
+        // Inside each brick is a text which says its size. The number must be placed in the middle
+        // of the brick. The x coordinate is thus the same as the brick, plus 50% of the brick size
+        // inaddition, I specify that the text is anchored in the middle.
+        // The font size is set to 50px - which is half the height of the brick height
+        // The y coordinate is then added 50 (to get to the middle, and the text baseline 
+        // is specified to sit in the middle 
+        res += "<text x='" + ( xPos * 100 + ( size * 100 ) / 2 ) + "' y='" + ( yPos * 100 + 50 ) + "' "
                 + "font-family=\"Verdana\" font-size=\"50px\""
-                + "text-anchor=\"middle\" alignment-baseline=\"hanging\">"
+                + "text-anchor=\"middle\" alignment-baseline=\"middle\">"
                 + size + "</text>\n";
         return res;
     }
