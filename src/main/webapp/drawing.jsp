@@ -17,6 +17,11 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <form action="action">
+            <input type="text" name="length" placeholder="length"/>
+            <input type="text" name="width" placeholder="width"/>
+            <input type="text" name="height" placeholder="height"/>
+            <input type="submit" value="Draw"/>
         <h1>Wow - a wall</h1>
         <!-- lav SVG Kanvas der passer i størrelsen og og giver os et 
              logisk koordinat system der er 100 gange størrer -->
