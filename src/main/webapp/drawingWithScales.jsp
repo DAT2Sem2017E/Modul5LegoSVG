@@ -4,7 +4,7 @@
     Author     : kasper
 --%>
 
-<%@page import="dk.cphbusiness.soft.legohousedraw.presentation.SVGUtil"%>
+<%@page import="dk.cphbusiness.legohouse.presentation.SVGUtil" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <% int length = 15; // get this from a request attribute
@@ -38,7 +38,7 @@
             </defs>
             <svg x="200" y="0" width="<%=length*100%>" height="<%=height*100%>" 
                 viewBox="0 0 <%=length * 100 + 1%> <%=height * 100 + 1%>">
-                <%= SVGUtil.house( length, width, height ) %>
+                <%= new SVGUtil().house( length, width, height ) %>
             </svg>
             <!-- Vertical line -->
             <line x1="100"  y1="0" x2="100" y2="<%=height*100%>" 

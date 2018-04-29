@@ -6,7 +6,7 @@
 package dk.cphbusiness.legohouse.presentation;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,7 +46,7 @@ public class Control extends HttpServlet {
         request.getRequestDispatcher("drawing.jsp").forward(request, response);
 
     }
-}
+
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**
