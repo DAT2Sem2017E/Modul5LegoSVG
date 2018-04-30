@@ -4,6 +4,7 @@ package dk.cphbusiness.legohouse.presentation;
  The purpose of SVGUtil is to...
 
  @author kasper
+ * Modified by: Thomas
  */
 public class SVGUtil {
 

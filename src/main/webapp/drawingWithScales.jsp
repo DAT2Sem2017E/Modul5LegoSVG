@@ -2,6 +2,7 @@
     Document   : drawingWithScales
     Created on : Nov 14, 2017, 11:35:00 AM
     Author     : kasper
+    Modified by : Thomas
 --%>
 
 <%@page import="dk.cphbusiness.legohouse.presentation.SVGUtil" %>
