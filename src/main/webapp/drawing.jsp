@@ -7,9 +7,9 @@
 <%@page import="dk.cphbusiness.legohouse.presentation.SVGUtil"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<% int length = 15; // get these from a request attribute
-   int width = 9; 
-   int height = 9; 
+<% int length = (request.getAttribute("length")==null)?15:(int)request.getAttribute("length");
+//   int width = (request.getAttribute("width")==null)?15:(int)request.getAttribute("width");
+   int height = (request.getAttribute("height")==null)?9:(int)request.getAttribute("height");
 %>
 <html>
     <head>
@@ -19,7 +19,7 @@
     <body>
         <form action="Control" method="POST">
             <input type="text" name="length" placeholder="length"/>
-            <input type="text" name="width" placeholder="width"/>
+            <!--<input type="text" name="width" placeholder="width"/>-->
             <input type="text" name="height" placeholder="height"/>
             <input type="submit" value="Draw"/>
             </form>
@@ -33,11 +33,12 @@
         <%
         if(request.getAttribute("drawing") == null) {
 //            out.print(new SVGUtil().house(length , width, height));
-            String url = "Control?length="+length+"&width="+width+"&height="+height;
+            String url = "Control?length="+length+"&height="+height;
             request.getRequestDispatcher(url).forward(request, response);
         } else {
             out.print(request.getAttribute("drawing"));
         }
+        
         %>
         
         </svg>

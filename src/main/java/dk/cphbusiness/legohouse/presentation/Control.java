@@ -36,11 +36,16 @@ public class Control extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
             int length = Integer.parseInt(request.getParameter("length"));
-            int width = Integer.parseInt(request.getParameter("width"));
+//            int width = Integer.parseInt(request.getParameter("width"));
             int height = Integer.parseInt(request.getParameter("height"));
-            String drawing = util.house(length, width, height);
+            String drawing = util.house(length, height);
+            System.out.println(drawing);
             request.setAttribute("drawing", drawing);
+            request.setAttribute("length", length);
+            request.setAttribute("height", height);
+            
         } catch(NumberFormatException ex) {
+            System.out.println("erorororororoororo");
             request.setAttribute("error", "Input must be numeric values");
         }
         request.getRequestDispatcher("drawing.jsp").forward(request, response);

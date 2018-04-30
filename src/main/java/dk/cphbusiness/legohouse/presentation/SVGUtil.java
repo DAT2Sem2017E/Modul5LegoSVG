@@ -12,11 +12,11 @@ public class SVGUtil {
      Draw a lego house from the long side (that is, width is unused)
 
      @param length
-     @param width (unused)
+     
      @param height
      @return SVG string which draws the house
      */
-    public String house( int length, int width, int height ) {
+    public String house( int length, int height ) {
         StringBuilder sb = new StringBuilder();
         for ( int layer = 0; layer <= height; layer++ ) {
             sb.append( layer( length, layer ) );
