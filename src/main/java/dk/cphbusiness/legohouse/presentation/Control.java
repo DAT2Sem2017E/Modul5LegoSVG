@@ -39,7 +39,7 @@ public class Control extends HttpServlet {
 //            int width = Integer.parseInt(request.getParameter("width"));
             int height = Integer.parseInt(request.getParameter("height"));
             String drawing = util.house(length, height);
-            System.out.println(drawing);
+//          System.out.println(drawing);
             request.setAttribute("drawing", drawing);
             request.setAttribute("length", length);
             request.setAttribute("height", height);
@@ -49,7 +49,6 @@ public class Control extends HttpServlet {
             request.setAttribute("error", "Input must be numeric values");
         }
         request.getRequestDispatcher("drawing.jsp").forward(request, response);
-
     }
 
 
