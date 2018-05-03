@@ -39,7 +39,7 @@
             </defs>
             <svg x="200" y="0" width="<%=length*100%>" height="<%=height*100%>" 
                 viewBox="0 0 <%=length * 100 + 1%> <%=height * 100 + 1%>">
-                <%= new SVGUtil().house( length, width, height ) %>
+                <%= new SVGUtil().house( length, width ) %>
             </svg>
             <!-- Vertical line -->
             <line x1="100"  y1="0" x2="100" y2="<%=height*100%>" 
