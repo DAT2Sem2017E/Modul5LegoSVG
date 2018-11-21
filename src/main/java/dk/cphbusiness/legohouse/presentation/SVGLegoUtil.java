@@ -1,12 +1,12 @@
 package dk.cphbusiness.legohouse.presentation;
 
 /**
- The purpose of SVGUtil is to...
+ The purpose of SVGLegoUtil is to...
 
  @author kasper
  * Modified by: Thomas
  */
-public class SVGUtil {
+public class SVGLegoUtil {
 
     /**
      Draw a lego house from the long side (that is, width is unused)

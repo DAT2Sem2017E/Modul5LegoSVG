@@ -6,7 +6,7 @@
 package dk.cphbusiness.legohouse.presentation;
 
 import java.io.IOException;
-//import java.io.PrintWriter;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Thomas
+ * @author thomas
  */
-@WebServlet(name = "Control", urlPatterns = {"/Control"})
-public class Control extends HttpServlet {
-
-    SVGLegoUtil util = new SVGLegoUtil();
+@WebServlet(name = "RectangleControl", urlPatterns = {"/RectangleControl"})
+public class RectangleControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,35 +32,24 @@ public class Control extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try {
-            int length = Integer.parseInt(request.getParameter("length"));
-//            int width = Integer.parseInt(request.getParameter("width"));
-            int height = Integer.parseInt(request.getParameter("height"));
-            String drawing = util.house(length, height);
-//          System.out.println(drawing);
-            request.setAttribute("drawing", drawing);
-            request.setAttribute("length", length);
-            request.setAttribute("height", height);
-            
-        } catch(NumberFormatException ex) {
-            System.out.println("erorororororoororo");
-            request.setAttribute("error", "Input must be numeric values");
+        String drawing = "<SVG width=\"255\" height=210><rect x=\"0\" y=\"0\" height=\"90\" width=\"90\"style=\"stroke:#000000; fill: #ff0000\"/></svg>";
+
+        request.setAttribute("drawing", drawing);
+        request.getRequestDispatcher("showRectangle.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("drawing.jsp").forward(request, response);
-    }
 
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -76,7 +63,7 @@ public class Control extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -87,7 +74,7 @@ public class Control extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
