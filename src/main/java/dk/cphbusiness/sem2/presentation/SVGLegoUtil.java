@@ -1,4 +1,4 @@
-package dk.cphbusiness.legohouse.presentation;
+package dk.cphbusiness.sem2.presentation;
 
 /**
  The purpose of SVGLegoUtil is to...

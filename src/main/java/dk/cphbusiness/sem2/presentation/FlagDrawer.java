@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dk.cphbusiness.legohouse.presentation;
+package dk.cphbusiness.sem2.presentation;
 
-import dk.cphbusiness.legohouse.entity.Rectangle;
+import dk.cphbusiness.sem2.entity.Rectangle;
 
 /**
  *

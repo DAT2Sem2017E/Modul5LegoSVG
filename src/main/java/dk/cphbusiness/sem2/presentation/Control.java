@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dk.cphbusiness.legohouse.presentation;
+package dk.cphbusiness.sem2.presentation;
 
 import java.io.IOException;
 //import java.io.PrintWriter;
